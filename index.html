@@ -31,11 +31,12 @@
                     <div class="next" @click="selectnextImg"></div>
 
                     <!-- add thumb with v-for -->
-                    <div class="thumb" v-for="(slide, i) in listaSlides">
+                    <div class="thumb" v-for="(slide, i) in listaSlides" :class="isActive(i, activeImage)">
                         <img v-bind:src="slide.image" 
                             v-bind:alt="slide.title"
                             :index="i"
                             @click="currentImage(i)"
+                            
                             />
                     </div>
                 </div>

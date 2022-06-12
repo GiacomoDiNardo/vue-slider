@@ -32,8 +32,6 @@ const appVue = new Vue({
     data: {
         listaSlides: slides,
         activeImage: 0,
-        classList: "active",
-        
     },
     
 
@@ -59,5 +57,11 @@ const appVue = new Vue({
             this.activeImage = i;
             
         },
+
+        isActive (thumbImg, bigImg) {
+            if(thumbImg === bigImg) {
+                return "active"
+            }
+        }
     },
 });
