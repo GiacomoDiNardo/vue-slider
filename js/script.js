@@ -59,12 +59,5 @@ const appVue = new Vue({
             this.activeImage = i;
             
         },
-
-        selectedImage: function(slide, i) {
-            if (i === this.activeImage) {
-                slide.classList.add(this.classList)
-            };
-            
-        }
     },
 });
