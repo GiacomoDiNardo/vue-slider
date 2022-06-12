@@ -26,14 +26,13 @@ const slides = [
     }
 ];
 
-console.log(slides);
-
 const appVue = new Vue({
     el: "#app",
     
     data: {
-        listaThumbs: slides,
+        listaSlides: slides,
         activeImage: 0,
+        classList: "active",
         
     },
     
@@ -53,6 +52,19 @@ const appVue = new Vue({
             } else {
                 this.activeImage = 0
             }
+        },
+
+        currentImage: function (i) {
+            console.log("hai clickato l'immagine" + i);
+            this.activeImage = i;
+            
+        },
+
+        selectedImage: function(slide, i) {
+            if (i === this.activeImage) {
+                slide.classList.add(this.classList)
+            };
+            
         }
     },
-})
+});

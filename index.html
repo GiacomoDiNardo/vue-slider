@@ -17,11 +17,11 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img :src="listaThumbs[activeImage].image" alt="listaThumbs[activeImage].title" />
+                    <img :src="listaSlides[activeImage].image" :alt="listaSlides[activeImage].title" />
                     <div class="text">
-                        <h3>{{listaThumbs[activeImage].title}}</h3>
+                        <h3>{{listaSlides[activeImage].title}}</h3>
                         <p>
-                           {{listaThumbs[activeImage].text}}
+                           {{listaSlides[activeImage].text}}
                         </p>
                     </div>
                 </div>
@@ -31,8 +31,13 @@
                     <div class="next" @click="selectnextImg"></div>
 
                     <!-- add thumb with v-for -->
-                    <div class="thumb" v-for="(thumb, i) in listaThumbs">
-                        <img v-bind:src="thumb.image" v-bind:alt="thumb.title" />
+                    <div class="thumb" v-for="(slide, i) in listaSlides">
+                        <img v-bind:src="slide.image" 
+                            v-bind:alt="slide.title"
+                            :index="i"
+                            @click="currentImage(i)"
+                            v-if="selectedImage"
+                            />
                     </div>
                 </div>
 
