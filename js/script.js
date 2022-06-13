@@ -40,12 +40,12 @@ const appVue = new Vue({
             if (this.activeImage > 0 ) {
                 this.activeImage --
             } else {
-                this.activeImage = 4
+                this.activeImage = this.listaSlides.length - 1
             }
         },
 
         selectnextImg: function () {
-            if (this.activeImage < 4 ) {
+            if (this.activeImage < this.listaSlides.length - 1) {
                 this.activeImage ++
             } else {
                 this.activeImage = 0
